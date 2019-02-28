@@ -1,0 +1,36 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: train-schedule-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: train-schedule
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80
+
+---
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: train-schedule-deployment
+  labels:
+    app: train-schedule
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: train-schedule
+  template:
+    metadata:
+      labels:
+        app: train-schedule
+    spec:
+      containers:
+      - name: train-schedule
+        image: 650143975734.dkr.ecr.us-west-1.amazonaws.com/ecr-repository-for-approved-images-for-smart-check-test:$IMAGETAG-$BUILD_ID
+        ports:
+        - containerPort: 80
