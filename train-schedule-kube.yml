@@ -34,3 +34,4 @@ spec:
         image: 650143975734.dkr.ecr.us-west-1.amazonaws.com/ecr-repository-for-approved-images-for-smart-check-test:$IMAGETAG-$BUILD_ID
         ports:
         - containerPort: 80
+ 
