@@ -5,3 +5,4 @@ FROM httpd:alpine
 # COPY eicar.com.txt /usr/local/apache2/htdocs/
 # Copying Eicar File that has a malware into the /usr/local/apahce2/htdocs/ path
 # COPY index.html /usr/local/apache2/htdocs/
+ 
