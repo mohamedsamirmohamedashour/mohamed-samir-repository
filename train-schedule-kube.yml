@@ -20,7 +20,7 @@ metadata:
   labels:
     app: train-schedule
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: train-schedule
@@ -31,7 +31,7 @@ spec:
     spec:
       containers:
       - name: train-schedule
-        image: 650143975734.dkr.ecr.us-west-1.amazonaws.com/ecr-repository-for-approved-images-for-smart-check-test:$IMAGETAG-$BUILD_ID
+        image: 650143975734.dkr.ecr.us-west-1.amazonaws.com/:$IMAGETAG-$BUILD_ID
         ports:
         - containerPort: 80
  
